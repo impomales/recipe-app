@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Recipe.css';
 
 class Recipe extends Component {
+    static defaultProps = {
+        ingredients: []
+    }
+    
+    static propTypes = {
+        title: PropTypes.string.isRequired,
+        img: PropTypes.string.isRequired,
+        ingredients: PropTypes.arrayOf(PropTypes.string),
+        instructions: PropTypes.string.isRequired
+    }
+    
     render() {
         const { title, img, instructions } = this.props;
         const ingredients = this.props.ingredients.map((ing, index) => (
@@ -13,7 +25,7 @@ class Recipe extends Component {
                     <img src={img} alt={title} />
                 </div>
                 <div className="recipe-card-content">
-                    <h3 className="recipe-title">Recipe { title }</h3>
+                    <h3 className="recipe-title">{ title }</h3>
                     <h4>Ingredients:</h4>
                     <ul>
                         {ingredients}
