@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Recipe from './Recipe';
+import RecipeList from './RecipeList';
 import './RecipeApp.css';
 
 class RecipeApp extends Component {
@@ -55,15 +55,9 @@ class RecipeApp extends Component {
   }
   
   render() {
-    const recipe = this.props.recipes[2];
     return (
       <div className="App">
-        <Recipe 
-          title={recipe.title}
-          ingredients={recipe.ingredients}
-          instructions={recipe.instructions}
-          img={recipe.img}
-          />
+        <RecipeList recipes={this.props.recipes}/>
       </div>
     );
   }
