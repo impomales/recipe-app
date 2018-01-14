@@ -10,7 +10,7 @@ class Recipe extends Component {
     static propTypes = {
         title: PropTypes.string.isRequired,
         img: PropTypes.string.isRequired,
-        ingredients: PropTypes.arrayOf(PropTypes.string),
+        ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
         instructions: PropTypes.string.isRequired
     }
     
