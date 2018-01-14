@@ -1,6 +1,6 @@
 .recipe-card {
-    width: 31%;
     min-width: 240px;
+    width: 31%;
     margin: 1%;
     border: 1px solid black;
     border: 1px solid rgba(160, 160, 160, 0.2);
@@ -16,7 +16,6 @@
 
 .recipe-card-image {
     overflow: hidden;
-    height: 50%;
 }
 
 .recipe-card img {

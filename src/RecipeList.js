@@ -23,7 +23,7 @@ class RecipeList extends Component {
             />
         ));
         return (
-            <div>
+            <div className="recipe-list">
                 {recipes}
             </div>
         );

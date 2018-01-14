@@ -4,11 +4,11 @@ import './NavBar.css';
 class NavBar extends Component {
     render() {
         return (
-            <div>
-                <div>
+            <div className="navbar">
+                <div className="navbar-title">
                     <h1>Recipe App</h1>
                 </div>
-                <div>
+                <div className="navbar-items">
                     <ul>Add Recipe</ul>
                     <ul>Home</ul>
                     <ul>About</ul>

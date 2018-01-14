@@ -1,0 +1,18 @@
+.navbar {
+    background-color: #293f63;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-title {
+    margin-left: 20px;
+}
+
+.navbar-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 20px;
+}
