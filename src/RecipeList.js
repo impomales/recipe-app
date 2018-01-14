@@ -14,21 +14,17 @@ class RecipeList extends Component {
     
     render() {
         const recipes = this.props.recipes.map((recipe, index) => (
-            <li>
-                <Recipe
-                    key={index}
-                    title={recipe.title}
-                    img={recipe.img}
-                    ingredients={recipe.ingredients}
-                    instructions={recipe.instructions}
-                />
-            </li>
+            <Recipe
+                key={index}
+                title={recipe.title}
+                img={recipe.img}
+                ingredients={recipe.ingredients}
+                instructions={recipe.instructions}
+            />
         ));
         return (
             <div>
-                <ul>
-                    {recipes}
-                </ul>
+                {recipes}
             </div>
         );
     }
