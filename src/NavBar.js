@@ -4,17 +4,17 @@ import './NavBar.css';
 class NavBar extends Component {
     render() {
         return (
-            <div className="navbar">
+            <header className="navbar">
                 <div className="navbar-title">
-                    <h1>Recipe App</h1>
+                    <h1><a>Recipe App</a></h1>
                 </div>
-                <div className="navbar-items">
-                    <ul>Add Recipe</ul>
-                    <ul>Home</ul>
-                    <ul>About</ul>
-                    <ul>Contact</ul>
-                </div>
-            </div>
+                <nav className="navbar-items">
+                    <li><a>Add Recipe</a></li>
+                    <li><a>Home</a></li>
+                    <li><a>About</a></li>
+                    <li><a>Contact</a></li>
+                </nav>
+            </header>
         );
     }
 }
