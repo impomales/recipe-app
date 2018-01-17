@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import RecipeList from './RecipeList';
+import RecipeInput from './RecipeInput';
 import NavBar from './NavBar';
 import './RecipeApp.css';
 
@@ -9,7 +10,7 @@ class RecipeApp extends Component {
     this.state = {
       recipes: [
         {
-          id: 1,
+          id: 0,
           img: "french_toast.jpg",
           title: "French Toast",
           ingredients: [
@@ -24,7 +25,7 @@ class RecipeApp extends Component {
           instructions: "Beat together egg, milk, salt, spices and vanilla. Heat a lightly oiled griddle or skillet over medium-high heat. Dunk each slice of bread in egg mixture, soaking both sides. Place in pan, and cook on both sides until golden. Serve hot."
         },
         {
-          id: 2,
+          id: 1,
           img: "mignon.jpg",
           title: "Filet Mignon with Rich Balsamic Glaze",
           ingredients: [
@@ -37,7 +38,7 @@ class RecipeApp extends Component {
           instructions: "Sprinkle freshly ground pepper over both sides of each steak, and sprinkle with salt to taste. Heat a nonstick skillet over medium-high heat. Place steaks in hot pan, and cook for 1 minute on each side, or until browned. Reduce heat to medium-low, and add balsamic vinegar and red wine. Cover, and cook for 4 minutes on each side, basting with sauce when you turn the meat over. Remove steaks to two warmed plates, spoon one tablespoon of glaze over each, and serve immediately."
         },
         {
-          id: 3, 
+          id: 2, 
           img: "cookie.jpg",
           title: "Best Chocolate Chip Cookie Ever!",
           ingredients: [
@@ -57,12 +58,25 @@ class RecipeApp extends Component {
       ],
       nextRecipeId: 3
     };
+    
+    this.handleSave = this.handleSave.bind(this);
+  }
+  
+  handleSave(recipe) {
+    this.setState((prevState, props) => {
+      const newRecipe = {...recipe, id: prevState.nextRecipeId};
+      return {
+        nextRecipeId: prevState.nextRecipeId + 1,
+        recipes: [...prevState.recipes, newRecipe]
+      };
+    });
   }
   
   render() {
     return (
       <div className="App">
         <NavBar />
+        <RecipeInput onSave={this.handleSave}/>
         <RecipeList recipes={this.state.recipes}/>
       </div>
     );

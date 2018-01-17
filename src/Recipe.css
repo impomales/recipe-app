@@ -1,7 +1,6 @@
 .recipe-card {
-    flex-basis: 0;
-    flex-grow: 1;
     min-width: 240px;
+    width: 30%;
     margin: 1%;
     border: 1px solid black;
     border: 1px solid rgba(160, 160, 160, 0.2);
@@ -28,8 +27,8 @@
     margin: 0;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .recipe-card {
-        width: 75%;
+        width: 50%;
     }
 }
