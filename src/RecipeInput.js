@@ -55,7 +55,7 @@ class RecipeInput extends Component {
         const {title, instructions, img, ingredients} = this.state;
         const onClose = this.props.onClose;
         let inputs = ingredients.map((ing, i) => (
-            <div className="recipe-form-line" key={`ingredient-${i}`}>
+            <div className="recipe-form-line ingredient" key={`ingredient-${i}`}>
                 <label>{i+1}.
                     <input 
                         type="text"

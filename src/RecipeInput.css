@@ -19,6 +19,7 @@
 
 .recipe-form h2 {
     align-self: center;
+    text-align: center;
     color: white;
     background-color: #293f63;
     padding: 10px 20px;
@@ -68,4 +69,27 @@
 
 label {
     font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    .recipe-form {
+        width: 50%;
+    }
+    
+    .recipe-form-line {
+        flex-direction: column;
+    }
+    
+    .recipe-form-line input, textarea{
+        width: 50%;
+        margin: auto;
+    }
+    
+    .ingredient {
+        margin-left: 20%;
+    }
+    
+    .ingredient input {
+        margin-left: 10%;
+    }
 }
