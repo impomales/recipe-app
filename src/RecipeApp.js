@@ -61,6 +61,7 @@ class RecipeApp extends Component {
     };
     
     this.handleSave = this.handleSave.bind(this);
+    this.onDelete = this.onDelete.bind(this);
   }
   
   handleSave(recipe) {
@@ -72,6 +73,11 @@ class RecipeApp extends Component {
         showForm: false
       };
     });
+  }
+  
+  onDelete(id) {
+    const recipes = this.state.recipes.filter((recipe) => recipe.id !== id);
+    this.setState({recipes});
   }
   
   render() {
@@ -86,7 +92,7 @@ class RecipeApp extends Component {
             onClose={() => this.setState({showForm: false})}/>
           : null
         }
-        <RecipeList recipes={this.state.recipes}/>
+        <RecipeList recipes={this.state.recipes} onDelete={this.onDelete}/>
       </div>
     );
   }
